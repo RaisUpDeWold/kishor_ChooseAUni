@@ -1,0 +1,193 @@
+﻿
+/*----------------------------------------------------------------------------- 
+Main Site Stylesheet
+Author: Ping Media (www.ping-media.co.uk)
+Desc:   General styles
+-----------------------------------------------------------------------------*/
+
+/* Global
+-----------------------------------------------------------------------------*/
+body{background-color:#FFF; font-family : Helvetica, Arial; color:#000;}
+a{text-decoration:none; color:#000;}
+
+/* General
+-----------------------------------------------------------------------------*/
+.alt_font{font-family: Arial;}
+.red{color:#c6151c;}
+
+.loading_overlay{width:100%; height:100%; position:absolute; top:0; left:0; background:transparent url(/media/images/trans-bg.png) repeat 0 0;}
+.loading_overlay .loading{width:100%; height:100%; position:absolute; top:0; left:0; background:transparent url(/media/images/loading.gif) no-repeat center center;}
+
+
+/* Page
+-----------------------------------------------------------------------------*/
+.wrapper {width: 90%; margin: 0 5%; position:relative;}
+.header-container {border-bottom: 20px solid #e44d26;}
+.footer-container, .main aside {border-top: 20px solid #e44d26;}
+.header-container, .footer-container, .main aside {background: #f16529;}
+
+/*** Mobile & Base Styles **/
+
+/* Navigation
+-----------------------------------------------------------------------------*/
+nav ul {margin: 0; padding: 0;}
+.main_nav a {display: block; margin-bottom: 10px; padding: 15px 0; text-align: center; text-decoration: none; font-weight: bold; color:#FFF; background: #e44d26;}
+.main_nav a:hover, nav a:visited {color:#FFF;}
+.main_nav a:hover {text-decoration: underline;}
+.main_nav ul li a.lnkhome:hover, .main_nav ul li.selected a.lnkhome{}
+    
+.breadcrumb_wrapper{}
+.breadcrumb_wrapper .bc_text{}
+.breadcrumb_wrapper .breadcrumb{}
+.breadcrumb_wrapper .breadcrumb li{display:inline;}
+.breadcrumb_wrapper .breadcrumb li a, .breadcrumb li span{}
+.breadcrumb_wrapper .breadcrumb li a.selected, .breadcrumb li a:hover{}
+.breadcrumb_wrapper .breadcrumb li span.selected{}
+
+/* Header
+-----------------------------------------------------------------------------*/
+header .logo{display:block; height:100px; width:100px; float:left; margin:12px 0;}
+
+/* Navigation
+-----------------------------------------------------------------------------*/
+.main_nav {float: left; width:100%;}
+.pnlLoggedIn{display: block;float: right;padding-right: 5%;margin-top:15px;}
+.pnlLoggedIn ul li{display:inline-block; color:#fff; margin-left:20px;}
+.pnlLoggedIn ul li a{color:#fff;}
+/* Content
+-----------------------------------------------------------------------------*/
+.main {padding: 30px 0;}
+.main article h1 {font-size:2em;}
+.main article h2 {font-size:1.8em;}
+.main article .ar_content{padding:0 0 12px; width: 100%;}
+.main article .ar_banner{padding:0 0 12px; width: 100%;}
+.main article .ar_banner img{/*width:100%;*/}
+.main aside {color:#FFF; padding: 0px 5% 10px;}
+
+/* Footer
+-----------------------------------------------------------------------------*/
+.footer-container footer {color:#FFF; padding: 20px 0;}
+.footer-container footer a{color:#FFF;}
+.footer_info{width:100%; padding:0; font-size:0.9em;}
+.footer_social{width:100%; padding:0; font-size:0.9em;}
+    .footer_social ul{ width: 100%; }
+        .footer_social ul li {display:inline;}
+        .footer_social ul a {display:inline; height:25px; width:25px;}
+            .footer_social ul a img {display:inline;}
+
+/*** General Styles **/
+
+/* Search
+-----------------------------------------------------------------------------*/
+.search_list_paging_sml {padding:12px 0; font-size: 0.9em;}
+.search_wrapper .s_body{min-height:512px; height:auto !important; height:512px;}
+.search_wrapper .s_body .search_list_item{border-bottom:1px solid #000; padding: 0 0 7px; margin: 0 0 12px;}
+.search_wrapper .s_body .search_list_item .sl_title{font-size:1.2em;}
+.search_wrapper .s_body .search_list_item .sl_text{display:block; padding:3px 0 5px;}
+.search_wrapper .search_list_paging_sml {width: 448px; padding:12px 0; color:#000;}
+.search_wrapper .search_list_status{font-size: 1.2em; padding: 0 0 7px; margin: 0 0 12px;}
+.search_wrapper .s_again{width:100%; padding:20px 0 20px 0;float:left; clear:both;}
+
+.search_col{width:100%; margin-right:3%; float:left; margin-bottom:30px;}
+.search_col .search_box{width:100%;}
+    .search_col .search_row { margin:0 0 5px 0;}
+.search_col label{ display:inline-block;margin-right:10px; width:100px;}
+  .search_col .search_row input{width:100%;}
+   
+/* SiteMap
+-----------------------------------------------------------------------------*/
+.sm_wrapper{width:400px;}
+.sm_wrapper .sm_top_list{width:400px; padding:0 0 12px;}
+.sm_wrapper .sm_top_list li{width:400px; padding:0 0 12px;}
+.sm_wrapper .sm_top_list li a{}
+.sm_wrapper .sm_top_list li .sm_child_list{width:350px; padding:0 0 0 12px;}
+.sm_wrapper .sm_top_list li .sm_child_list li{width:350px;  padding:5px 0 0;}
+.sm_wrapper .sm_top_list li .sm_child_list li a{}
+
+/* Forms
+-----------------------------------------------------------------------------*/
+.site_form{position:relative; width:100%; outline:red solid 1px;}
+.site_form legend{display:none;}
+.site_form .sf_title{width:100%; padding:0; margin:0;}
+
+.site_form .sf_row{width:100%; padding:0; margin:0 0 5px;}
+.site_form .sf_row_indent{width:253px; padding:0 0 0 120px; margin:15px 0 5px;}
+.site_form .sf_divider{margin:0 0 15px;}
+
+.sf_row_title{display:block; padding:4px 0 0;}
+.sf_row_box{border:1px solid #000; padding:3px 10px 3px 6px;}
+.sf_row_select{border:1px solid #000; padding:1px 1px 1px 6px;}
+.sf_row_select option{border:1px solid #000;}
+
+.sf_row .sf_row_title{width:120px; }
+.sf_row .sf_row_box{width:235px;}
+.sf_row .sf_row_select{width:253px; }
+
+.sf_row_text{border:1px solid #000; padding:3px 10px 3px 6px; width:235px; height: 50px;}
+ 
+.sf_row_date{border:1px solid #000; padding:3px 10px 3px 6px; width:209px;}
+.sf_row .ui-datepicker-trigger{float: left; margin: 5px 0 0 10px; cursor:pointer;}
+ 
+.sf_row .f_checkbox{background-color:#FFF; display:block; width:15px; height:16px; margin: 0 0 0 15px;}
+.sf_row .sf_row_chk .checked{background-image:url(/media/images/chk_on.png);}
+.sf_row .sf_row_chk .unchecked{background-image:url(/media/images/chk_off.png);}
+.sf_row a.btn_question{border: 0 none; cursor: pointer; display: block; outline: 0 none; padding:0 0 0 25px; width:170px; margin:0 0 0 10px; line-height: 20px; position:relative;}
+.sf_row a.btn_question:hover{text-decoration:none;}
+.sf_row a.btn_question span.help_tip{display: none; visibility: hidden; text-decoration:none;}
+.sf_row a.btn_question:hover span.help_tip{background-color: #FFF; border: 1px solid #000; bottom: 22px; display: block; left: 0; padding: 5px 4px 5px 5px; position: absolute; visibility: visible; z-index: 999; text-decoration:none !important; width:400px;}
+
+.sf_row .sf_row_fail{margin:0 0 0 5px;}
+.sf_row .sf_row_faillist ul{list-style:none outside none; margin:0;}
+
+/* Buttons/Links
+-----------------------------------------------------------------------------*/
+.btn_site{border: 0; outline: 0; margin: 0; text-align: center; text-decoration:none; background-color:#F0F0F0; padding:12px 25px; width:auto; display: inline;}
+    .btn_site:hover { text-decoration: none; }
+
+/*** media Query Styles **/
+
+/*** INTERmediaTE **/
+@media only screen and (min-width: 480px) {
+
+    /* Navigation
+    -----------------------------------------------------------------------------*/
+    .main_nav {float: right; width:60%;}
+    .main_nav a {float: left; width:18%; margin: 0 1.7%; padding: 25px 2%; margin-bottom: 0; }
+    .main_nav li:first-child a {margin-left: 0;}
+    .main_nav li:last-child a {margin-right: 0;}
+
+    /* IE Fixes
+    -----------------------------------------------------------------------------*/
+    .main_nav ul li {display: inline;}
+    .oldie .main_nav a {margin: 0 0.7%;}
+}
+
+/*** WIDE **/
+@media only screen and (min-width: 768px) {
+
+    /* Navigation
+    -----------------------------------------------------------------------------*/
+    .main_nav {float: right; width:50%;}
+    
+    /* Footer
+    -----------------------------------------------------------------------------*/
+    .footer_info{width:49%; float:left;}
+    .footer_social{width:49%; float:right;}
+        .footer_social nav {float:right;}
+
+    /* Content
+    -----------------------------------------------------------------------------*/
+    .main article {float: left; width: 100%;}
+    .main aside {float: right; width: 28%;}
+     .search_col{width:30%; margin-right:3%; float:left; margin-bottom:30px;}
+
+  
+}
+
+/*** Maximal Width **/
+@media only screen and (min-width: 1140px) {
+    .wrapper { /* 1140px - 10% for margins */ margin: 0 auto;}
+}
+
+
+

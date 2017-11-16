@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="showresultsApp">
+<head >
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="language" content="en-UK" />
+
+
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+
+
+    <!-- stylesheets -->
+    <link href="base.css?v=3" rel="stylesheet" type="text/css" media="all" />
+    <link href="styles.css?v=3" rel="stylesheet" type="text/css" media="all" />
+    <link href="plugins.css?v=3" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="reset.css?v=3" type="text/css" media="all"> <!-- CSS reset -->
+    <link rel="stylesheet" href="style.css?v=3" type="text/css" media="all"> <!-- Gem style -->
+    <!--[if IE]><link rel="stylesheet" type="text/css" href="ie.css?v=3" media="all" /><![endif]-->
+    <!-- Javascript -->
+    <script src="http://secureping.co.uk/safe/scripts/libs/modernizr-2.6.2-respond-1.1.0.min.js" type="text/javascript"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-tags-input/2.1.1-1/ng-tags-input.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-foundation/0.5.1/mm-foundation-tpls.js"></script>
+    <script src="search.app.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="component.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/ng-tags-input/2.1.1-1/ng-tags-input.min.css" />
+
+
+
+</head>
+<body id="Top" ng-controller="ResultListCtrl">
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <form >
+
+        
+
+        <header role="banner">
+            <div id="cd-logo">Choose A Uni</div>
+            
+            <nav class="main-nav">
+               
+            </nav>
+        </header>
+
+       
+
+
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+
+                <article id="central">
+                    <header>
+                    </header>
+                    <section>
+
+                      
+
+                        <div class="s_body">
+
+                            <div class="component">
+
+                                <div class="search_col">
+                                    <div class="search_row">
+                                        <label>Course:</label>
+                                        <input ng-model="searchtxt.courseName">
+                                    </div>
+                                    <div class="search_row">
+                                        <label>Subject:</label>
+                                        <input id="txtsearchsubject" ng-model="searchtxt.subjectName">
+                                    </div>
+                                    <p>Showing {{(results | filter:searchtxt:myFilter).length}} results out of {{results.length}}.</p>
+
+                                </div>
+
+
+                                <div class="search_col" style="display:none;">
+
+                                    <div>
+                                        <tags-input id="tagbox" ng-model="tags" placeholder="Add subject">
+                                            <auto-complete source="loadTags($query)"></auto-complete>
+                                        </tags-input>
+                                    </div>
+                                    <div id="selectedsubjects">
+                                        <span ng-repeat="tag in tags">{{tag.text}}</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="results_table_container">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <span ng-click="reverse=!reverse;order('uniName', reverse)">Uni/College </span><a class="has-filter" id="uniNameFilterTrig"></a><br />
+
+                                                    <input class="uniNameFilter" ng-model="searchtxt.uniName">
+
+                                                </th>
+                                                <th ng-click="reverse=!reverse;order('courseName', reverse)">Course</th>
+                                                <th ng-click="reverse=!reverse;order('subjectName', reverse)">Subject</th>
+                                                <th>
+                                                    <span ng-click="reverse=!reverse;order('entry', reverse)">A2 Entry</span><a class="has-filter" id="unientryFilterTrig"></a><br />
+                                                    <input ng-model="searchtxt.entry" class="uniEntryNameFilter">
+                                                </th>
+                                                <th>
+                                                    <span ng-click="reverse=!reverse;order('UCAS', reverse)">UCAS Entry</span><a class="has-filter" id="uniucasFilterTrig"></a><br />
+                                                    <input ng-model="searchtxt.UCAS" class="uniucasFilter">
+                                                </th>
+                                                <th>
+                                                    <span ng-click="reverse=!reverse;order('years', reverse)">Years</span><a class="has-filter" id="uniyearsFilterTrig"></a><br />
+                                                    <input ng-model="searchtxt.years" class="uniyearsFilter">
+                                                </th>
+                                                <th>
+                                                    <span ng-click="reverse=!reverse;order('qualification', reverse)">Qual</span><a class="has-filter" id="uniqualFilterTrig"></a><br />
+                                                    <input ng-model="searchtxt.qualification" class="uniqualFilter">
+                                                </th>
+                                                <th>
+                                                    <span ng-click="reverse=!reverse;order('offers', reverse)">Offers</span><a class="has-filter" id="unioffersFilterTrig"></a><br />
+                                                    <input ng-model="searchtxt.offers" class="unioffersFilter">
+                                                </th>
+                                                <th>
+                                                    <span ng-click="reverse=!reverse;order('group', reverse)">Group</span><a class="has-filter" id="unigroupFilterTrig"></a><br />
+                                                    <input ng-model="searchtxt.group" class="unigroupFilter">
+                                                </th>
+                                                <th ng-click="reverse=!reverse;order('Rank 2011', reverse)">Rank 2011</th>
+                                                <th ng-click="reverse=!reverse;order('Rank 2012', reverse)">Rank 2012</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tbody>
+                                            <tr ng-repeat="result in results | filter:searchtxt:myFilter">
+                                                <td class="user-name"><a href="{{result.uniUrl}}" target="_blank">{{result.uniName}}</a></td>
+                                                <td class="user-name"><a href="{{result.courseUrl}}" target="_blank">{{result.courseName}}</a></td>
+                                                <td class="user-name">{{result.subjectName}}</td>
+                                                <td class="user-name">{{result.entry}}</td>
+                                                <td class="user-email">{{result.UCAS}}</td>
+                                                <td class="user-phone">{{result.years}}</td>
+                                                <td class="user-mobile">{{result.qualification}}</td>
+                                                <td class="user-name">{{result.offers}}</td>
+                                                <td class="user-email"><a href="{{result.groupUrl}}" target="_blank" class="has-tip" tooltip-popup-delay="1000" tooltip-placement="top" tooltip="{{result.groupToolTip}}">{{result.group}}</a></td>
+                                                <td class="user-phone">{{result.rank2011}}</td>
+                                                <td class="user-mobile">{{result.rank2012}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </section>
+                </article>
+
+
+
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="jquery-ui.min.js"></script>
+        <script type="text/javascript" src="browser.js"></script>
+        <script src="jquery.min.js"></script>
+        <!--
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+        <script src="Scripts/jquery.stickyheader.js"></script>-->
+        <script type="text/javascript" src="scripts.js"></script>
+        <script src="main.js"></script> <!-- Gem jQuery -->
+      
+
+    </form>
+
+  
+
+</body>
+</html>
