@@ -4,19 +4,12 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
-body,
-html {
+body, html {
     width: 100%;
     height: 100%;
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+body, h1, h2, h3, h4, h5, h6 {
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
@@ -167,4 +160,67 @@ footer {
 
 p.copyright {
     margin: 15px 0 0;
+}
+
+/* Login Form */
+.dropdown-login {
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dropdown-login .help-block {
+    font-size: 12px;
+}
+
+.dropdown-login .bottom {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid #DDD;
+    clear: both;
+    padding: 14px;
+}
+
+.dropdown-login .social-buttons {
+    margin: 12px 0;
+}
+
+.dropdown-login .social-buttons a {
+    width: 49%;
+}
+
+.dropdown-login .social-buttons .form-group {
+    margin-bottom: 10px;
+}
+
+.dropdown-login .social-buttons .btn-fb {
+    color: #FFF;
+    background-color: #3B5998;
+}
+
+.dropdown-login .social-buttons .btn-fb:hover {
+    color: #FFF;
+    background-color: #496EBC;
+}
+
+.dropdown-login .social-buttons .btn-tw {
+    color: #FFF;
+    background-color: #55ACEE;
+}
+
+.dropdown-login .social-buttons .btn-tw:hover {
+    color: #FFF;
+    background-color: #59b5FA;
+}
+
+@media(max-width: 768px) {
+    .dropdown-login {
+        background-color: inherit;
+        color: #FFF;
+    }
+
+    .dropdown-login .bottom {
+        background-color: inherit;
+        border-top: 0 none;
+    }
 }
